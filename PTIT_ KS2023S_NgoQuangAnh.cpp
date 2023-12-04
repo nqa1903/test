@@ -112,6 +112,7 @@ int main(){
 	list[0] = list1;
 	list[1] = list2;
 	int updateIndex;
+	int findStatus;
 	char answer[50];
 	do{
 		printf("************************ MENU ************************ \n");
@@ -121,7 +122,7 @@ int main(){
 		printf("4. Xoa thong tin contact \n");
 		printf("5. In ra danh sach contact da sap xep theo ten (thuat toan noi bot) \n");
 		printf("6. In ra danh sach contact da sap xep theo ten (thuat toan tim kiem nhi phan) \n");
-		printf("7. In ra danh sach contact da sap xep theo status (thuat toan tim kiem tuyen tinh) \n");
+		printf("7. In ra danh sach contact trung status (thuat toan tim kiem tuyen tinh) \n");
 		printf("8. Thoat \n");
 		printf("Nhap vao lua chon : ");
 		int choice;
@@ -157,6 +158,19 @@ int main(){
         	case 6:
         		break;
         	case 7: 
+        		printf("Nhap status muon tim kiem : ");
+        		scanf("%d",&findStatus);
+        		for(int i = 0 ; i < currentSize ; i++){
+        			if(findStatus == list[i].status){
+        				printf("The ID of contact : %d \n",list[i].id);
+						printf("The name of contact : %s \n",list[i].name);
+						printf("The phone number of contact : %s \n",list[i].phone);
+						printf("The address of contact : %s \n",list[i].address);
+						printf("The status of contact : %d \n",list[i].status);
+						printf("----- \n");
+					}
+				}
+				printf("\n");
         		break;
         	case 8:
         		exit(0);
