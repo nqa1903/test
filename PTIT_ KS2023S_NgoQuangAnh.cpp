@@ -111,6 +111,7 @@ int main(){
 	};
 	list[0] = list1;
 	list[1] = list2;
+	int updateIndex;
 	char answer[50];
 	do{
 		printf("************************ MENU ************************ \n");
@@ -136,7 +137,7 @@ int main(){
 			case 3:
 				printf("Nhap vao ten contact muon sua: ");
         		gets(answer);
-                int updateIndex = searchContact(list,currentSize,answer);
+                updateIndex = searchContact(list,currentSize,answer);
                 if(updateIndex != -1){
                 	struct contactList updatedContact = addInfo();
                 	list[updateIndex] = updatedContact;
